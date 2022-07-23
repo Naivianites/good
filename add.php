@@ -59,13 +59,14 @@ if(isset($_POST["submit"])){
                     <div class="inputs">
                         <p>Qoute</p>
                         <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
-                        <textarea name="qoute">
+                        <textarea name="qoute" placeholder="The days the breaks you, are the days that will make you.">
                         </textarea>
                     </div>
                     <div class="inputs">
                         <p>Author </p>
-                        <input type="text" name="author" placeholder="(If you want your name to be anonymous its completely OPTIONAL)">
+                        <input type="text" name="author" placeholder="Steve Jobs">
                     </div>
+                    
                     <div class="btn">
                         <button type="submit" name="submit">Submit</button>
                         <a href="index.php" id="close">Close</a>

@@ -11,7 +11,6 @@ function display_data()
 }
 
 $results = display_data();
-
 ?>
 
 <!DOCTYPE html>

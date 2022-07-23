@@ -1,13 +1,37 @@
 <?php
 
-if(isset($_GET["id"])){
-    echo "AWdawdaw";
-}
+include_once "database.php";
 
+$id = $_GET['id'];
+
+if (isset($_POST["submit"])) {
+    $qoutes = $_POST["qoute"];
+    $author = $_POST["author"];
+
+    function update_query()
+    {
+
+        global $conn, $qoutes, $author, $id;
+
+        $results = mysqli_query($conn, "UPDATE `qoutes` SET `Qoutes`='$qoutes',`Author`='$author' WHERE `id` = '$id' ");
+        
+        return $results;
+    }
+    $results = update_query();
+
+   
+
+    if ($results) {
+        header("location:index.php?msg= Update Successfully");
+    } else {
+        echo "not works".mysqli_error($conn);
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +43,7 @@ if(isset($_GET["id"])){
     <link rel="stylesheet" href="./css/add.css">
     <title>Edit Qoutes</title>
 </head>
+
 <body>
     <div class="wrapper">
         <header>
@@ -27,36 +52,49 @@ if(isset($_GET["id"])){
                 <a href="index.php">Home</a>
             </div>
         </header>
-        
+
         <!-- add qoutes sections -->
         <section class="add-container">
             <div class="add-container-top">
                 <div class="add">
                     <h2>Edit Qoutes</h2>
-                    <a href="#" id="delete"> Delete </a>
+                    <a href="delete.php?id=<?= $id ?>" id="delete"> Delete </a>
                 </div>
             </div>
-           <div class="add-form">
-                <form action="#" method="post">
-                    <div class="inputs">
-                        <p>Qoute</p>
-                        <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
-                        <textarea name="qoute">
+            <div class="add-form">
+                <?php
+                $get_id_query = mysqli_query($conn, "SELECT * FROM `qoutes` WHERE id = $id");
 
+                while ($row = mysqli_fetch_array($get_id_query)) {
+                ?>
+                    <form method="post">
+
+                        <div class="inputs">
+                            <p>Qoute</p>
+                            <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
+                            <textarea name="qoute">
+                                <?= $row['Qoutes']; ?>
                         </textarea>
-                    </div>
-                    <div class="inputs">
-                        <p>Author </p>
-                        <input type="text" name="qoute" placeholder="(If you want your name to be anonymous its completely OPTIONAL)">
-                    </div>
-                    <div class="btn">
-                        <a href="#" id="submit">Submit</a>
-                        <a href="index.php" id="close">Close</a>
-                    </div>
-                </form>
-           </div>
+                        </div>
+                        <div class="inputs">
+                            <p>Author </p>
+                            <input type="text" name="author" value="<?= $row['Author']; ?>"">
+                        </div>
+                        <div class=" btn">
+                            <button type="submit" name="submit">Submit</button>
+                            <a href="index.php" id="close">Close</a>
+                        </div>
+
+
+                    </form>
+                <?php
+                }
+
+                ?>
+            </div>
         </section>
     </div>
 
 </body>
+
 </html>
