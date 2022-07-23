@@ -1,3 +1,30 @@
+<?php
+include_once "database.php";
+
+if(isset($_POST["submit"])){
+    $qoutes = $_POST["qoute"];
+    $author = $_POST["author"];
+
+    function insert_query(){
+        global $conn, $qoutes, $author;
+
+        $results = mysqli_query($conn, "INSERT INTO `qoutes`(`Qoutes`, `Author`) VALUES ('$qoutes' , '$author')");
+        return $results;
+    }
+    $results = insert_query();
+
+    if($results){
+        header("location:index.php?msg=Successfully Added");
+    }else{
+        echo "not works";
+        echo $qoutes;
+        echo $author;
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/add.css">
-    <title>Edit Qoutes</title>
+    <title>Add Qoutes</title>
 </head>
 <body>
     <div class="wrapper">
@@ -28,20 +55,19 @@
                 </div>
             </div>
            <div class="add-form">
-                <form action="#" method="post">
+                <form method="post">
                     <div class="inputs">
                         <p>Qoute</p>
                         <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
                         <textarea name="qoute">
-
                         </textarea>
                     </div>
                     <div class="inputs">
                         <p>Author </p>
-                        <input type="text" name="qoute" placeholder="(If you want your name to be anonymous its completely OPTIONAL)">
+                        <input type="text" name="author" placeholder="(If you want your name to be anonymous its completely OPTIONAL)">
                     </div>
                     <div class="btn">
-                        <a href="#" id="submit">Submit</a>
+                        <button type="submit" name="submit">Submit</button>
                         <a href="index.php" id="close">Close</a>
                     </div>
                 </form>

@@ -1,3 +1,19 @@
+<?php
+include_once "database.php";
+
+function display_data()
+{
+    global $conn;
+    $display_query = "SELECT * FROM qoutes";
+    $results = mysqli_query($conn, $display_query);
+
+    return $results;
+}
+
+$results = display_data();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,19 +24,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time();?>">
     <title>The Good Qoutes</title>
+
 </head>
 
 <body>
     <div class="wrapper">
+        <!-- <div class="msg" id="msgContainer">
+            <p id="message">awdawdaw</p>
+            <span id="close"> &times; </span>
+        </div> -->
+       
         <header>
             <div class="banner">
                 <h1 class="title">The Good Quotes</h1>
                 <a href="index.php">Home</a>
             </div>
         </header>
-        
+
         <!-- descriptions -->
         <section class="description">
             <div class="des-container">
@@ -33,42 +55,38 @@
         </div>
         <!-- display qoutes -->
         <section class="quote-container">
-            <a href="edit.php" class="quotes" >
-                <div class="quote">
-                    <h2>" The fear of the Lord is the beginning of knowledge but fools despise wisdom and instuctions " - Proverbs 1:7</h2>
-                </div>
-                <div class="publisher">
-                    <p>Naivians</p>
-                </div>
-            </a>
-            <a href="edit.php" class="quotes" >
-                <div class="quote">
-                    <h2>" The fear of the Lord is the beginning of knowledge but fools despise wisdom and instuctions " - Proverbs 1:7</h2>
-                </div>
-                <div class="publisher">
-                    <p>Naivians</p>
-                </div>
-            </a>
-            <a href="edit.php" class="quotes" >
-                <div class="quote">
-                    <h2>" The fear of the Lord is the beginning of knowledge but fools despise wisdom and instuctions " - Proverbs 1:7</h2>
-                </div>
-                <div class="publisher">
-                    <p>Naivians</p>
-                </div>
-            </a>
-            <a href="edit.php" class="quotes" >
-                <div class="quote">
-                    <h2>" The fear of the Lord is the beginning of knowledge but fools despise wisdom and instuctions " - Proverbs 1:7</h2>
-                </div>
-                <div class="publisher">
-                    <p>Naivians</p>
-                </div>
-            </a>
+
+            <!-- display data from database -->
+            <?php
+
+            while ($row = mysqli_fetch_array($results)) {
+
+            ?>
+                <a href="edit.php?id=<?= $row["id"]; ?>" class="quotes">
+                    <div class="quote">
+                        <h2>"<?= $row["Qoutes"]; ?> "</h2>
+                    </div>
+                    <div class="publisher">
+                        <p><?= $row["Author"]; ?></p>
+                    </div>
+                </a>
+            <?php
+            }
+
+            ?>
+
         </section>
     </div>
 
+    <script>
+        let btnClose = document.getElementById("close");
+        let msgContainer = document.getElementById("msg-container");
 
+        btnClose.onclick = ()=> {
+            msgContainer.style.display = "none";
+        }
+
+    </script>
 
 
 </body>
