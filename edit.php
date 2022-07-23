@@ -44,14 +44,14 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/add.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Edit Qoutes</title>
+    <title>Edit Quotes</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
             <div class="banner">
-                <h1 class="title">The Good Qoutes</h1>
+                <h1 class="title">The Good Quotes</h1>
                 <a href="index.php">Home</a>
             </div>
         </header>
@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
         <section class="add-container">
             <div class="add-container-top">
                 <div class="add mt-5 mb-4">
-                    <h2>Edit Qoutes</h2>
+                    <h2>Edit Quotes</h2>
                     <a href="delete.php?id=<?= $id ?>" class="btn btn-danger "> Delete </a>
                 </div>
             </div>
@@ -73,7 +73,7 @@ if (isset($_POST["submit"])) {
                     <form method="post">
 
                         <div class="inputs">
-                            <p class="mt-2">Qoute</p>
+                            <p class="mt-2">Quotes</p>
                             <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
                             <input name="qoute" value="<?= $row['Qoutes']; ?>">
 

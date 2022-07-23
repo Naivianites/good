@@ -26,7 +26,7 @@ $results = display_data();
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>The Good Qoutes</title>
+    <title>The Good Quotes</title>
 
     <style>
         .search-con form{
@@ -56,8 +56,8 @@ $results = display_data();
         <!-- descriptions -->
         <section class="description">
             <div class="des-container">
-                <h2>Share Your Motivational and <br> Inspirational Qoutes</h2>
-                <a href="add.php">Add Qoutes</a>
+                <h2>Share Your Motivational and <br> Inspirational Quotes</h2>
+                <a href="add.php">Add Quotes</a>
             </div>
         </section>
         <div class="search-con mt-5 mb-3">

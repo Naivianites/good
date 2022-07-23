@@ -41,23 +41,23 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/add.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Add Qoutes</title>
+    <title>Add Quotes</title>
 </head>
 
 <body class="bg-light">
     <div class="wrapper">
         <header>
             <div class="banner">
-                <h1 class="title">The Good Qoutes</h1>
+                <h1 class="title">The Good Quotes</h1>
                 <a href="index.php">Home</a>
             </div>
         </header>
 
-        <!-- add qoutes sections -->
+        <!-- add Quotes sections -->
         <section class="add-container">
             <div class="add-container-top">
                 <div class="add">
-                    <h2>Add Qoutes</h2>
+                    <h2>Add Quotes</h2>
                 </div>
             </div>
 
@@ -78,7 +78,7 @@ if (isset($_POST["submit"])) {
             <div class="add-form">
                 <form method="post">
                     <div class="inputs">
-                        <p class="mt-2">Qoute</p>
+                        <p class="mt-2">Quotes</p>
                         <input type="text" name="qoute" placeholder="The days the breaks you, are the days that will make you." class="inputs">
                         </input>
                     </div>

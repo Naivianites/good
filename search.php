@@ -15,7 +15,7 @@ include_once "database.php";
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>The Good Qoutes</title>
+    <title>The Good Quotes</title>
 
 </head>
 
@@ -31,7 +31,7 @@ include_once "database.php";
         <!-- descriptions -->
         <section class="description">
             <div class="des-container">
-                <h2>Share Your Motivational and <br> Inspirational Qoutes</h2>
+                <h2>Share Your Motivational and <br> Inspirational Quotes</h2>
             </div>
         </section>
 
