@@ -9,7 +9,6 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 50px 0 20px 0;
 }
 
 .add-container .add-form form{
@@ -21,7 +20,7 @@ body{
 p{
     font-size: 1.5rem;
 }
-input, textarea{
+input{
     width: 100%;
     padding: 10px;
     margin: 20px 0;
@@ -29,25 +28,4 @@ input, textarea{
     border-radius: 5px;
     border: 1px solid #ccc;
     outline-color: yellowgreen;
-}
-
-.btn{
-    margin: 20px 0;
-}
-
-.btn a, #delete{
-    background-color: #424242;
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-}
-
-.btn #submit{
-    background-color: rgb(47, 47, 245);
-}
-
-#delete{
-    background-color: rgb(204, 84, 84);
 }

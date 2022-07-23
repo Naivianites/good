@@ -8,23 +8,25 @@ if (isset($_POST["submit"])) {
     $qoutes = $_POST["qoute"];
     $author = $_POST["author"];
 
-    function update_query()
-    {
+    if ($qoutes == "" || $author == "") {
+        header("location:edit.php");
+    }else{
+        function update_query(){
 
-        global $conn, $qoutes, $author, $id;
+            global $conn, $qoutes, $author, $id;
 
-        $results = mysqli_query($conn, "UPDATE `qoutes` SET `Qoutes`='$qoutes',`Author`='$author' WHERE `id` = '$id' ");
-        
-        return $results;
-    }
-    $results = update_query();
+            $results = mysqli_query($conn, "UPDATE `qoutes` SET `Qoutes`='$qoutes',`Author`='$author' WHERE `id` = '$id' ");
 
-   
+            return $results;
+        }
 
-    if ($results) {
-        header("location:index.php?msg= Update Successfully");
-    } else {
-        echo "not works".mysqli_error($conn);
+        $results = update_query();
+
+        if ($results) {
+            header("location:index.php?msg= Update Successfully");
+        } else {
+            echo "not works" . mysqli_error($conn);
+        }
     }
 }
 ?>
@@ -41,6 +43,7 @@ if (isset($_POST["submit"])) {
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/add.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Edit Qoutes</title>
 </head>
 
@@ -56,9 +59,9 @@ if (isset($_POST["submit"])) {
         <!-- add qoutes sections -->
         <section class="add-container">
             <div class="add-container-top">
-                <div class="add">
+                <div class="add mt-5 mb-4">
                     <h2>Edit Qoutes</h2>
-                    <a href="delete.php?id=<?= $id ?>" id="delete"> Delete </a>
+                    <a href="delete.php?id=<?= $id ?>" class="btn btn-danger "> Delete </a>
                 </div>
             </div>
             <div class="add-form">
@@ -70,19 +73,19 @@ if (isset($_POST["submit"])) {
                     <form method="post">
 
                         <div class="inputs">
-                            <p>Qoute</p>
+                            <p class="mt-2">Qoute</p>
                             <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
-                            <textarea name="qoute">
-                                <?= $row['Qoutes']; ?>
-                        </textarea>
+                            <input name="qoute" value="<?= $row['Qoutes']; ?>">
+
+                            </input>
                         </div>
                         <div class="inputs">
-                            <p>Author </p>
+                            <p class="mt-2">Author </p>
                             <input type="text" name="author" value="<?= $row['Author']; ?>"">
                         </div>
-                        <div class=" btn">
-                            <button type="submit" name="submit">Submit</button>
-                            <a href="index.php" id="close">Close</a>
+                        <div class=" mt-4">
+                            <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                            <a href="index.php" class="btn btn-secondary">Close</a>
                         </div>
 
 

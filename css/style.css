@@ -6,25 +6,9 @@
 body{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    color: #424242;
-   background-color: #eee;
-}
-.msg {
-    width: 100%;
-    padding: 0px 30px;
-    background-color: yellowgreen;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-}
-.msg p{
-    font-size: 1.2rem;
+   background-color: #eee !important;
 }
 
-.msg span{
-    font-size: 2rem;
-    cursor: pointer;
-}
 .title{
     font-family: 'Pacifico', cursive;
 }
@@ -44,7 +28,7 @@ header .banner{
 
 }
 header .banner a, .description .des-container a{
-    color: #424242;
+    color: #fff;
     font-size: 1.2rem;
     text-decoration: none;
     background-color: yellowgreen;
@@ -58,7 +42,7 @@ header .banner a:hover{
 
 .description .des-container{
     
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
     padding: 40px 40px;
     text-align: center;
     border-radius: 5px;
@@ -67,38 +51,23 @@ header .banner a:hover{
     font-size: 2rem;
     margin-bottom: 50px;
 }
-.description .des-container a{
+
+/* .description .des-container a{
     color: #fff;
-}
-
-/* search by author sections */
-
-.search{
-    margin: 20px 0 ;
-}
-.search input{
-    font-size: .9rem;
-    padding: 10px 5px;
-    outline-color: yellowgreen;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
+} */
 
 .quote-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-   
 }
 .quote-container .quotes{
     width: 400px;
     height: 300px;
     box-shadow: 5px 0 5px rgba(0,0,0,0.1);
-    /* border: 1px solid #000; */
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -113,14 +82,14 @@ header .banner a:hover{
 
 .quote-container .quotes:hover{
     background-color: #efefef;
-    transform: scale(.98);
+    transform: scale(.99);
 }
 
 .quote-container .quotes .publisher{
-    border: 1px solid #eee;
     position: absolute;
     bottom: 0;
-    left: 0;
-    padding: 10px;
+    left: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
