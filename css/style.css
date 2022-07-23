@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #424242;
+   background-color: #eee;
+}
+
+.title{
+    font-family: 'Pacifico', cursive;
+}
+
+.wrapper{
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    padding: 10px 40px;
+}
+header .banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+
+}
+header .banner a, .description .des-container a{
+    color: #424242;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: yellowgreen;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-weight: 800;
+}
+header .banner a:hover{
+    background-color: rgb(175, 224, 77);
+}
+
+.description .des-container{
+    
+    border: 1px solid #eee;
+    padding: 40px 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+.description .des-container h2{
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+.description .des-container a{
+    color: #fff;
+}
+
+/* search by author sections */
+
+.search{
+    margin: 20px 0 ;
+}
+.search input{
+    font-size: .9rem;
+    padding: 10px 5px;
+    outline-color: yellowgreen;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.quote-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+.quote-container .quotes{
+    width: 400px;
+    height: 300px;
+    box-shadow: 5px 0 5px rgba(0,0,0,0.1);
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #424242;
+}
+
+.quote-container .quotes:hover{
+    background-color: #efefef;
+    transform: scale(.98);
+}
+
+.quote-container .quotes .publisher{
+    border: 1px solid #eee;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+}
+
