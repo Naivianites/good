@@ -43,18 +43,31 @@ if (isset($_POST["submit"])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/add.css">
+    <link rel="stylesheet" href="./css/add.css?v=<?= time(); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Edit Quotes</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <?php include "navbar.php";?>
+
+        <header>
+            <div class="banner">
+                <h1 class="title">The Good Quotes</h1>
+                <a href="index.php">Home</a>
+            </div>
+        </header>
+
+        <!-- descriptions -->
+        <section class="description">
+            <div class="des-container">
+                <h2>Share Your Motivational and Inspirational Quotes</h2>
+            </div>
+        </section>
         <!-- add qoutes sections -->
         <section class="add-container">
             <div class="add-container-top">
-                <div class="add mt-5 mb-4">
+                <div class="add mt-4 mb-4">
                     <h2>Edit Quotes</h2>
                     <a href="delete.php?id=<?= $id ?>" class="btn btn-danger "> Delete </a>
                 </div>
@@ -68,7 +81,7 @@ if (isset($_POST["submit"])) {
                     <form method="post">
 
                         <div class="inputs">
-                            <p class="mt-2">Quotes</p>
+                            <p class="mt-1">Quotes</p>
                             <!-- <input type="text" name="qoute" placeholder="Be the Best version of yourself"> -->
                             <input name="qoute" value="<?= $row['Qoutes']; ?>">
 

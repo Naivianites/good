@@ -45,9 +45,7 @@ $results = display_data();
 
             <!-- display data from database -->
             <?php
-
             while ($row = mysqli_fetch_array($results)) {
-
             ?>
                 <a href="edit.php?id=<?= $row["id"]; ?>" class="quotes">
                     <div class="quote">
@@ -74,3 +72,6 @@ $results = display_data();
 </body>
 
 </html>
+
+
+
