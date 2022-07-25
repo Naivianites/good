@@ -8,10 +8,11 @@ if (isset($_POST["submit"])) {
     $qoutes = $_POST["qoute"];
     $author = $_POST["author"];
 
-    if ($qoutes == "" || $author == "") {
-        header("location:edit.php");
-    }else{
-        function update_query(){
+    if ($qoutes === "" || $author === "") {
+        header("location:index.php");
+    } else {
+        function update_query()
+        {
 
             global $conn, $qoutes, $author, $id;
 
@@ -49,13 +50,7 @@ if (isset($_POST["submit"])) {
 
 <body>
     <div class="wrapper">
-        <header>
-            <div class="banner">
-                <h1 class="title">The Good Quotes</h1>
-                <a href="index.php">Home</a>
-            </div>
-        </header>
-
+        <?php include "navbar.php";?>
         <!-- add qoutes sections -->
         <section class="add-container">
             <div class="add-container-top">
@@ -87,8 +82,6 @@ if (isset($_POST["submit"])) {
                             <button type="submit" name="submit" class="btn btn-success">Submit</button>
                             <a href="index.php" class="btn btn-secondary">Close</a>
                         </div>
-
-
                     </form>
                 <?php
                 }

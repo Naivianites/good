@@ -1,33 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   color: #424242;
-   background-color: #eee !important;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #424242;
+    background-color: #eee !important;
 }
 
-.title{
+.title {
     font-family: 'Pacifico', cursive;
 }
 
-.wrapper{
+.wrapper {
     width: 70%;
     margin: 0 auto;
-    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     padding: 10px 40px;
 }
-header .banner{
+
+header .banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.2rem;
-
 }
-header .banner a, .description .des-container a{
+
+header .banner a,
+.description .des-container a {
     color: #fff;
     font-size: 1.2rem;
     text-decoration: none;
@@ -36,36 +39,50 @@ header .banner a, .description .des-container a{
     border-radius: 5px;
     font-weight: 800;
 }
-header .banner a:hover{
+
+header .banner a:hover {
     background-color: rgb(175, 224, 77);
 }
 
-.description .des-container{
-    
+.description .des-container {
     border: 1px solid #ccc;
-    padding: 40px 40px;
+    padding: 40px;
     text-align: center;
     border-radius: 5px;
 }
-.description .des-container h2{
+
+.description .des-container h2 {
     font-size: 2rem;
     margin-bottom: 50px;
 }
 
-/* .description .des-container a{
-    color: #fff;
-} */
+.search-con form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-.quote-container{
+}
+
+.search-con form input {
+    width: 300px;
+}
+
+.search-con form input,
+.search-con form button {
+    border-radius: 0;
+}
+
+.quote-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-.quote-container .quotes{
+
+.quote-container .quotes {
     width: 400px;
     height: 300px;
-    box-shadow: 5px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 10px 20px;
     position: relative;
@@ -80,12 +97,12 @@ header .banner a:hover{
     color: #424242;
 }
 
-.quote-container .quotes:hover{
+.quote-container .quotes:hover {
     background-color: #efefef;
     transform: scale(.99);
 }
 
-.quote-container .quotes .publisher{
+.quote-container .quotes .publisher {
     position: absolute;
     bottom: 0;
     left: 20px;
@@ -93,3 +110,148 @@ header .banner a:hover{
     font-weight: 500;
 }
 
+@media screen and (max-width: 400px) {
+    .wrapper {
+        width: 100% !important;
+        padding: 10px;
+    }
+
+    header .banner a {
+        margin: 10px 0;
+        padding: 5px;
+        font-size: .8rem;
+        width: 100%;
+    }
+
+    header .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description .des-container h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .description .des-container {
+        padding: 20px;
+    }
+
+    .description .des-container a {
+        font-size: .8rem;
+        padding: 8px;
+    }
+
+    .search-con form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-con form input,
+    .search-con form button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-con form button {
+        background-color: #424242;
+        color: #fff;
+    }
+
+
+    .search-con form button {
+        background-color: #424242;
+        color: #fff;
+    }
+
+    .quote-container .quotes {
+        width: 100% !important;
+    }
+
+}
+
+@media screen and (min-width: 401px) {
+    .wrapper {
+        width: 100% !important;
+        padding: 10px;
+    }
+
+    header .banner {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .description .des-container h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .description .des-container {
+        padding: 40px;
+    }
+
+    .description .des-container a {
+        font-size: .8rem;
+        padding: 8px;
+    }
+
+    .quote-container .quotes {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 670px) {
+
+    .description .des-container h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .description .des-container {
+        padding: 20px;
+    }
+
+    .description .des-container a {
+        font-size: 1.2rem;
+        padding: 8px 10px;
+    }  
+
+    .description .des-container a {
+        font-size: .8rem;
+        padding: 8px;
+    }
+
+    .quote-container .quotes {
+        width: 280px;
+        height: 300px;
+        margin: 10px;
+    }
+
+}
+
+@media screen and (min-width: 750px) {
+    .quote-container .quotes {
+        width: 330px;
+        height: 300px;
+        margin: 10px;
+    }
+}
+
+@media screen and (min-width: 870px) {
+    .wrapper {
+        width: 70% !important;
+        padding: 20px 40px;
+    }
+    .quote-container .quotes {
+        width: 400px;
+        height: 300px;
+        margin: 25px 0;
+    }
+
+    .description .des-container a {
+        font-size: 1.2rem;
+        padding: 8px 10px;
+    }   
+}

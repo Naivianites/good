@@ -28,44 +28,19 @@ $results = display_data();
 
     <title>The Good Quotes</title>
 
-    <style>
-        .search-con form{
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-
-        }
-        .search-con form input{
-           width: 300px;
-        }
-        .search-con form input, .search-con form button{
-            border-radius: 0;
-        }
-    </style>
 </head>
 
 <body class="bg-light">
-    <div class="wrapper">
-        <header>
-            <div class="banner">
-                <h1 class="title">The Good Quotes</h1>
-                <a href="index.php">Home</a>
-            </div>
-        </header>
 
-        <!-- descriptions -->
-        <section class="description">
-            <div class="des-container">
-                <h2>Share Your Motivational and <br> Inspirational Quotes</h2>
-                <a href="add.php">Add Quotes</a>
-            </div>
-        </section>
+    <div class="wrapper">
+        <?php include "navbar.php" ?>
         <div class="search-con mt-5 mb-3">
             <form action="search.php" method="post">
                 <input type="text" placeholder="Search by Author name" class="form-control" name="search-input" autocomplete="off">
                 <button type="submit" class="btn btn-outline-dark" name="submit-search">search</button>
             </form>
         </div>
+
         <section class="quote-container mt-5">
 
             <!-- display data from database -->
