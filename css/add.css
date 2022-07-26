@@ -30,6 +30,20 @@ input{
     .add-container .add-form form{
         padding: 0px;
     }
+    .add-container .add-container-top .add{
+        flex-direction: column;
+    }
+    .add-container .add-container-top .add a{
+        width: 100%;
+        margin: 10px 0;
+    }
+    .wrapper{
+        width: 100% !important;
+        padding: 10px;
+    }
+    .description .des-container h2{
+        font-size: 1.5rem;
+    }
 }
 
 
