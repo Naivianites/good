@@ -1,8 +1,6 @@
 <?php
 
-include_once "database.php";
 
-$id = $_GET['id'];
 
 if (isset($_POST["submit"])) {
     $qoutes = $_POST["qoute"];
