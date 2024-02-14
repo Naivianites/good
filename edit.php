@@ -3,8 +3,7 @@
 
 
 if (isset($_POST["submit"])) {
-    $qoutes = $_POST["qoute"];
-    $author = $_POST["author"];
+ 
 
     if ($qoutes === "" || $author === "") {
         header("location:index.php");
